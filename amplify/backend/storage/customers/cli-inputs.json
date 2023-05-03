@@ -1,0 +1,10 @@
+{
+  "resourceName": "customers",
+  "tableName": "tbl_customer",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

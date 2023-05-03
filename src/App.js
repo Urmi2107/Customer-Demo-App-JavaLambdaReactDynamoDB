@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useContext } from 'react';
+import { CustomerContext } from './CustomerProvider';
+import ShowCustomers from './custom-components/ShowCustomers';
+import AddCustomerForm from './custom-components/AddCustomerForm';
+import UpdateCustomerForm from './custom-components/UpdateCustomerForm';
+import {
+  HeroLayout2,HeroLayout3,NavBar 
+ } from './ui-components';
+  
 function App() {
+  const {addCustomerHandler,showAddCustomerForm,showcustomers,getCustomers,showCustomerUpdateForm}=useContext(CustomerContext);
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar
+        overrides={{
+          Dashboard:{
+            style: {
+              cursor:"pointer",
+            },
+            onClick:()=>{addCustomerHandler()}
+          
+          },
+          Jobs:{
+            style: {
+              cursor:"pointer",
+            },
+            onClick:()=>{getCustomers()}
+          }
+        }
+      }
+      />
+      <HeroLayout2
+      overrides={{
+        HeroLayout3:{
+          height:"50px",
+          backgroundColor: "rgba(0, 0, 0, 1)"
+        },
+        HeroLayout2:{
+          height:"330px"
+        }
+      }
+    }
+      />
+      {
+        showcustomers && (<ShowCustomers/>)
+      }
+      {
+        showAddCustomerForm && (<AddCustomerForm/>)
+      }
+      {
+        showCustomerUpdateForm && (<UpdateCustomerForm/>)
+      }
     </div>
   );
 }

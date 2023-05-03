@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +37,31 @@
     transform: rotate(360deg);
   }
 }
+button{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+table {
+  border: 2px solid black;
+  width: 700px;
+  height: 100px;
+  background-color: lavender;
+  margin: auto;
+}
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+  border-bottom: 1px dotted black;
+}
+.text_box{
+   padding-top: 20px;
+}
+
